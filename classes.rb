@@ -43,6 +43,29 @@ employee1 = Employee.new(first: "Frank", last: "Johnson", phone: 555_555_5555, e
 employee2 = Employee.new(first: "Jerry", last: "Oblonsky", phone: 231_555_5555, email: "joblonsky@email.com")
 employee3 = Employee.new(first: "Mitch", last: "Richmond", phone: 310_555_5555, email: "bigmitch@email.com")
 
-employee1.print_employee
-employee2.print_employee
-employee3.print_employee
+# employee1.print_employee
+# employee2.print_employee
+# employee3.print_employee
+
+class Manager < Employee
+  def initialize(options)
+    super
+    @dept = options[:dept]
+  end
+
+  def tps
+    p "TPS report, please."
+  end
+end
+
+manager1 = Manager.new(
+  first: "Harry",
+  last: "Gladstone",
+  phone: 455_555_5555,
+  email: "harry@email.com",
+  dept: "communications",
+)
+
+# p manager1
+manager1.print_employee
+manager1.tps
