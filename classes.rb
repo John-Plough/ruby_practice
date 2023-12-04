@@ -1,20 +1,48 @@
-#model employee info
-#print "John makes $200000 per year"
+# class Employee
+#   attr_accessor :first, :last, :phone, :email
+
+#   def initialize(first, last, phone, email)
+#     @first = first
+#     @last = last
+#     @phone = phone
+#     @email = email
+#   end
+
+#   def say_name
+#     "#{@first} #{@last}"
+#   end
+# end
+
+# employee1 = Employee.new("Frank", "Johnson", 555_555_5555, "fjohnson@email.com")
+# employee2 = Employee.new("Jerry", "Oblonsky", 231_555_5555, "joblonsky@email.com")
+# employee3 = Employee.new("Mitch", "Richmond", 310_555_5555, "bigmitch@email.com")
+
+# pp employee1
+# pp employee2
+# pp employee3
+# p employee1.phone
+# p employee2.say_name
+# p employee3.email
 
 class Employee
-  def initialize(first)
-    @first = first
+  attr_accessor :first, :last, :phone, :email
+
+  def initialize(options)
+    @first = options[:first]
+    @last = options[:last]
+    @phone = options[:phone]
+    @email = options[:email]
   end
 
-  def say_name
-    p @first
+  def print_employee
+    p "#{first} #{last} has the following email address: #{email}"
   end
 end
 
-employee1 = Employee.new("Frank")
-employee2 = Employee.new("Jerry")
-employee3 = Employee.new("Mitch")
+employee1 = Employee.new(first: "Frank", last: "Johnson", phone: 555_555_5555, email: "fjohnson@email.com")
+employee2 = Employee.new(first: "Jerry", last: "Oblonsky", phone: 231_555_5555, email: "joblonsky@email.com")
+employee3 = Employee.new(first: "Mitch", last: "Richmond", phone: 310_555_5555, email: "bigmitch@email.com")
 
-employee1.say_name
-pp employee2
-pp employee3
+employee1.print_employee
+employee2.print_employee
+employee3.print_employee
